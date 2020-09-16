@@ -1,11 +1,10 @@
 <?php
 
 
-namespace App\Services;
+namespace App\Classes;
 
 
 use App\Models\Timeline;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
 class TimelineEntry
@@ -26,7 +25,8 @@ class TimelineEntry
     public function withTransition(string $label, $from, $to): self {
         $transitionEntry = $this->timeline->transition()->create([
             'timeline_id' => $this->timeline->id,
-            'label' => $from,
+            'label' => $label,
+            'from' => $from,
             'to' => $to
         ]);
 
@@ -38,6 +38,7 @@ class TimelineEntry
     public function withMessage(string $label, string $message): self {
         $messageEntry = $this->timeline->message()->create([
             'timeline_id' => $this->timeline->id,
+            'label' => $label,
             'message' => $message
         ]);
 

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Timeline extends Model
 {
+    protected $fillable = ['related_type', 'related_id', 'message'];
+
     /** Relationships */
     public function related() {
         return $this->morphTo();

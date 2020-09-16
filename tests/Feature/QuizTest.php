@@ -11,13 +11,16 @@ test('can create a new quiz', function(){
     ]);
 
     $testResponse = postJson('/api/quiz', [
-        'name' => 'test'
+        'name' => 'test',
+        'description' => 'A sample test',
     ]);
 
     $testResponse
         ->assertSuccessful()
         ->assertJsonStructure([
             'id',
+            'name',
+            'description'
         ]);
 });
 
@@ -30,6 +33,6 @@ test('fails to create test if not all required fields present', function(){
     $testResponse = postJson('/api/quiz', []);
 
     $testResponse
-        ->assertStatus(500);
+        ->assertStatus(422);
 });
 

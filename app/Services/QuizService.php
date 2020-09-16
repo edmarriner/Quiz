@@ -7,7 +7,6 @@ namespace App\Services;
 use App\DTOs\Quiz\CreateQuizDTO;
 use App\DTOs\Quiz\EditQuizDTO;
 use App\Models\Quiz;
-use App\Models\Timeline;
 use Illuminate\Support\Facades\DB;
 
 class QuizService
@@ -23,7 +22,7 @@ class QuizService
 
         $quiz = Quiz::create([
             'name' => $input->name,
-            ''
+            'description' => $input->description,
         ]);
 
         $this->timeline->entry($quiz, 'New quiz created')

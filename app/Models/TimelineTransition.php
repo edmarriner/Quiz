@@ -6,4 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class TimelineTransition extends Model
 {
+    protected $fillable = ['label', 'from', 'to'];
 }
