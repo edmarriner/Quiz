@@ -6,7 +6,9 @@ namespace App\Services;
 
 use App\DTOs\Quiz\CreateQuizDTO;
 use App\DTOs\Quiz\EditQuizDTO;
+use App\Enums\QuizStatusEnum;
 use App\Models\Quiz;
+use App\Models\QuizStatus;
 use Illuminate\Support\Facades\DB;
 
 class QuizService
@@ -20,10 +22,18 @@ class QuizService
 
     public function createNewQuiz(CreateQuizDTO $input): Quiz {
 
-        $quiz = Quiz::create([
+        $quiz = Quiz::make([
             'name' => $input->name,
             'description' => $input->description,
         ]);
+
+        $status = QuizStatus::query()
+            ->where('code', QuizStatusEnum::DRAFT())
+            ->firstOrFail();
+
+        $quiz->quiz_status_id = $status->id;
+
+        $quiz->save();
 
         $this->timeline->entry($quiz, 'New quiz created')
             ->withMessage('Name', $input->name);

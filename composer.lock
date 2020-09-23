@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e7dfc816681541515fcb49737d9c9a3",
+    "content-hash": "9a3e4b8f72185fcbe02aacfebb67fb15",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1753,52 +1753,6 @@
             "time": "2020-07-23T08:41:23+00:00"
         },
         {
-            "name": "myclabs/php-enum",
-            "version": "1.7.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/myclabs/php-enum.git",
-                "reference": "5f36467c7a87e20fbdc51e524fd8f9d1de80187c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/5f36467c7a87e20fbdc51e524fd8f9d1de80187c",
-                "reference": "5f36467c7a87e20fbdc51e524fd8f9d1de80187c",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7",
-                "squizlabs/php_codesniffer": "1.*",
-                "vimeo/psalm": "^3.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "MyCLabs\\Enum\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP Enum contributors",
-                    "homepage": "https://github.com/myclabs/php-enum/graphs/contributors"
-                }
-            ],
-            "description": "PHP Enum implementation",
-            "homepage": "http://github.com/myclabs/php-enum",
-            "keywords": [
-                "enum"
-            ],
-            "time": "2020-02-14T08:15:52+00:00"
-        },
-        {
             "name": "nesbot/carbon",
             "version": "2.39.1",
             "source": {
@@ -2946,6 +2900,72 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "spatie/enum",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/enum.git",
+                "reference": "f26ac524e80f20a97236a478a262fb3a02b580cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/enum/zipball/f26ac524e80f20a97236a478a262fb3a02b580cb",
+                "reference": "f26ac524e80f20a97236a478a262fb3a02b580cb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.4"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^9.0",
+                "vimeo/psalm": "^3.12"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Enum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev@gummibeer.de",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Enums",
+            "homepage": "https://github.com/spatie/enum",
+            "keywords": [
+                "enum",
+                "enumerable",
+                "spatie"
+            ],
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-08-28T10:50:26+00:00"
         },
         {
             "name": "spatie/laravel-query-builder",
@@ -6635,378 +6655,6 @@
                 }
             ],
             "time": "2020-09-02T14:19:36+00:00"
-        },
-        {
-            "name": "pestphp/pest",
-            "version": "v0.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pestphp/pest.git",
-                "reference": "c6ba469e686db775451a4731ef9af6d275fbeaad"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/c6ba469e686db775451a4731ef9af6d275fbeaad",
-                "reference": "c6ba469e686db775451a4731ef9af6d275fbeaad",
-                "shasum": ""
-            },
-            "require": {
-                "nunomaduro/collision": "^5.0",
-                "pestphp/pest-plugin": "^0.3",
-                "pestphp/pest-plugin-coverage": "^0.3",
-                "pestphp/pest-plugin-init": "^0.3",
-                "php": "^7.3 || ^8.0",
-                "phpunit/phpunit": "9.3.7 || 9.3.8"
-            },
-            "require-dev": {
-                "illuminate/console": "^7.16.1",
-                "illuminate/support": "^7.16.1",
-                "mockery/mockery": "^1.4.1",
-                "pestphp/pest-dev-tools": "dev-master"
-            },
-            "bin": [
-                "bin/pest"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev"
-                },
-                "pest": {
-                    "plugins": [
-                        "Pest\\Plugins\\Version"
-                    ]
-                },
-                "laravel": {
-                    "providers": [
-                        "Pest\\Laravel\\PestServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pest\\": "src/"
-                },
-                "files": [
-                    "src/globals.php",
-                    "src/Pest.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nuno Maduro",
-                    "email": "enunomaduro@gmail.com"
-                }
-            ],
-            "description": "An elegant PHP Testing Framework.",
-            "keywords": [
-                "framework",
-                "pest",
-                "php",
-                "test",
-                "testing",
-                "unit"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-08-29T21:55:28+00:00"
-        },
-        {
-            "name": "pestphp/pest-plugin",
-            "version": "v0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pestphp/pest-plugin.git",
-                "reference": "635f8c33a3eed910ac3cd5cb02a7163c5c70c033"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest-plugin/zipball/635f8c33a3eed910ac3cd5cb02a7163c5c70c033",
-                "reference": "635f8c33a3eed910ac3cd5cb02a7163c5c70c033",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1 || ^2.0",
-                "php": "^7.3 || ^8.0"
-            },
-            "conflict": {
-                "pestphp/pest": "<0.3"
-            },
-            "require-dev": {
-                "composer/composer": "^1.10",
-                "pestphp/pest": "^0.3",
-                "pestphp/pest-dev-tools": "dev-master"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev"
-                },
-                "class": "Pest\\Plugin\\Manager"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pest\\Plugin\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "The Pest plugin manager",
-            "keywords": [
-                "framework",
-                "manager",
-                "pest",
-                "php",
-                "plugin",
-                "test",
-                "testing",
-                "unit"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-08-25T20:53:40+00:00"
-        },
-        {
-            "name": "pestphp/pest-plugin-coverage",
-            "version": "v0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pestphp/pest-plugin-coverage.git",
-                "reference": "f209bb62728841f21f267759a374d66172a162ea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest-plugin-coverage/zipball/f209bb62728841f21f267759a374d66172a162ea",
-                "reference": "f209bb62728841f21f267759a374d66172a162ea",
-                "shasum": ""
-            },
-            "require": {
-                "pestphp/pest-plugin": "^0.3",
-                "php": "^7.3 || ^8.0",
-                "sebastian/environment": "^5.1.2"
-            },
-            "conflict": {
-                "pestphp/pest": "<0.3"
-            },
-            "require-dev": {
-                "pestphp/pest": "^0.3",
-                "pestphp/pest-dev-tools": "dev-master"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.3.x-dev"
-                },
-                "pest": {
-                    "plugins": [
-                        "Pest\\PluginCoverage\\Plugin"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pest\\PluginCoverage\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "The Pest Coverage Plugin",
-            "keywords": [
-                "coverage",
-                "framework",
-                "pest",
-                "php",
-                "plugin",
-                "test",
-                "testing",
-                "unit"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-08-25T20:42:46+00:00"
-        },
-        {
-            "name": "pestphp/pest-plugin-init",
-            "version": "v0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pestphp/pest-plugin-init.git",
-                "reference": "06482f1c7ccf92c9ed855efcb7e594399628710a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest-plugin-init/zipball/06482f1c7ccf92c9ed855efcb7e594399628710a",
-                "reference": "06482f1c7ccf92c9ed855efcb7e594399628710a",
-                "shasum": ""
-            },
-            "require": {
-                "pestphp/pest-plugin": "^0.3",
-                "php": "^7.3 || ^8.0"
-            },
-            "conflict": {
-                "pestphp/pest": "<0.3"
-            },
-            "require-dev": {
-                "pestphp/pest": "^0.3",
-                "pestphp/pest-dev-tools": "dev-master"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev"
-                },
-                "pest": {
-                    "plugins": [
-                        "Pest\\Init\\Plugin"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pest\\Init\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "The Pest Init plugin",
-            "keywords": [
-                "framework",
-                "init",
-                "pest",
-                "php",
-                "plugin",
-                "test",
-                "testing",
-                "unit"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-08-27T20:08:38+00:00"
-        },
-        {
-            "name": "pestphp/pest-plugin-laravel",
-            "version": "v0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pestphp/pest-plugin-laravel.git",
-                "reference": "0ec53f5cc2d661088683318629ca16dcd72c41d1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest-plugin-laravel/zipball/0ec53f5cc2d661088683318629ca16dcd72c41d1",
-                "reference": "0ec53f5cc2d661088683318629ca16dcd72c41d1",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^7.0 || ^8.0",
-                "pestphp/pest": "^0.3",
-                "php": "^7.3 || ^8.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^5.2 || ^6.0",
-                "pestphp/pest-dev-tools": "dev-master"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pest\\Laravel\\": "src/"
-                },
-                "files": [
-                    "src/Autoload.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "The Pest Laravel Plugin",
-            "keywords": [
-                "framework",
-                "pest",
-                "php",
-                "plugin",
-                "test",
-                "testing",
-                "unit"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-08-25T21:08:14+00:00"
         },
         {
             "name": "phar-io/manifest",
