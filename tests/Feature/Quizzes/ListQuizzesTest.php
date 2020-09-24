@@ -22,4 +22,21 @@ class ListQuizzesTest extends TestCase
         $testResponse
             ->assertJson($quizzes->toArray());
     }
+
+    public function test_can_filter_quizzes()
+    {
+
+        $this->authenticate();
+
+        Quiz::factory()->count(10)->create();
+        $quiz = Quiz::first();
+        $quiz->name = 'test';
+        $quiz->save();
+
+        $testResponse = $this->getJson('/api/quizzes?filter[name]=test');
+
+        $testResponse
+            ->assertJsonCount(1)
+            ->assertJson([$quiz->toArray()]);
+    }
 }
