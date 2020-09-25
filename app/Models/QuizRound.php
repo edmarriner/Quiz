@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class QuizRound extends Model
 {
+    protected $fillable = [ 'name' ];
+
     public function questions() {
         $this->hasMany(QuizRoundQuestion::class);
     }

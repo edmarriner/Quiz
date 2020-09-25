@@ -15,10 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         User::factory()->create([
-             'name' => 'admin',
-             'email' => 'admin@gmail.com',
-             'password' => Hash::make('password'),
-         ]);
+         $this->call(QuizSeeder::class);
     }
 }
