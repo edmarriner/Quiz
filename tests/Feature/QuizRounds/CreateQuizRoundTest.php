@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\QuizRounds;
 
+use App\Models\Quiz;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -11,12 +12,17 @@ class CreateQuizRoundTest extends TestCase
 
     public function test_can_create_quiz_round()
     {
+        $this->seed();
+
         $this->authenticate();
 
-        $quiz::firstOrFail();
+        $quiz = Quiz::firstOrFail();
 
-        $response = $this->post('/quizzes/');
+        $response = $this->post("/api/quizzes/{$quiz->id}/rounds", [
+            'name' => 'Sample round'
+        ]);
 
-        $response->assertStatus(200);
+        $response
+            ->assertSuccessful();
     }
 }

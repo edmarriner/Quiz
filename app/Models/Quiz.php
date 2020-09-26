@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Quiz extends Model
 {
@@ -11,15 +14,15 @@ class Quiz extends Model
 
     protected $fillable = ['name', 'description'];
 
-    public function status() {
-        $this->belongsTo(QuizStatus::class);
+    public function status(): BelongsTo {
+        return $this->belongsTo(QuizStatus::class);
     }
 
-    public function rounds() {
-        $this->hasMany(QuizRound::class);
+    public function rounds(): HasMany {
+        return $this->hasMany(QuizRound::class);
     }
 
-    public function timelines() {
-        $this->morphMany(Timeline::class, 'related');
+    public function timelines(): MorphMany {
+        return $this->morphMany(Timeline::class, 'related');
     }
 }
