@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Quiz;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateQuizRoundRequest extends FormRequest
@@ -15,6 +16,7 @@ class CreateQuizRoundRequest extends FormRequest
 
     public function authorize()
     {
-        return true;
+        $quiz = Quiz::find($this->route('quizId'));
+        return $quiz && $this->user()->can('update', $quiz);
     }
 }

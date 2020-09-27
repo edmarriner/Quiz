@@ -4,8 +4,11 @@
 namespace App\Services;
 
 
+use App\DTOs\Quiz\EditQuizDTO;
+use App\DTOs\Quiz\EditQuizRoundDTO;
 use App\Models\Quiz;
 use App\Models\QuizRound;
+use DB;
 
 class QuizRoundService
 {
@@ -37,6 +40,32 @@ class QuizRoundService
         return $round;
     }
 
+    public function editQuizRound(QuizRound $quizRound, EditQuizRoundDTO $dto) {
+
+        DB::transaction(function() use (&$quizRound, $dto) {
+
+            if($dto->name != null) {
+                $quizRound = $this->renameQuizRound($quizRound, $dto->name);
+            }
+
+        });
+
+        return $quizRound;
+    }
+
+    public function renameQuizRound(QuizRound $quizRound, $name): QuizRound {
+
+        $previousName = $quizRound->name;
+
+        $quizRound->name = $name;
+        $quizRound->save();
+
+        $this->timelineService->entry($quizRound, 'Round renamed')
+            ->withTransition('Name', $previousName, $name);
+
+        return $quizRound;
+    }
+
     private function calculateNextRoundOrder(Quiz $quiz):int {
 
         $highest = QuizRound::query()
@@ -47,4 +76,7 @@ class QuizRoundService
 
         return $highest->order ?? 1;
     }
+
+
+
 }
