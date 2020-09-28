@@ -17,8 +17,8 @@ class EditQuizRoundController extends Controller
 
         $quizRound = QuizRound::findOrFail($id);
 
-        EditQuizRoundDTO::fromArray($input);
+        $dto = EditQuizRoundDTO::fromArray($input);
 
-        $service->editQuizRound($quizRound, $input);
+        $service->editQuizRound($quizRound, $dto);
     }
 }

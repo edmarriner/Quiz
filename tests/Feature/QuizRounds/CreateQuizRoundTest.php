@@ -23,6 +23,7 @@ class CreateQuizRoundTest extends TestCase
         ]);
 
         $response
+            ->dump()
             ->assertSuccessful();
     }
 }
