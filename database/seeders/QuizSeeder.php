@@ -29,9 +29,11 @@ class QuizSeeder extends Seeder
     }
 
     private function createQuiz(Quiz $quiz) {
-        $this->quizService->createNewQuiz(new CreateQuizDTO(
+        $quiz = $this->quizService->createNewQuiz(new CreateQuizDTO(
             $quiz->name,
             $quiz->description
         ));
+
+
     }
 }
